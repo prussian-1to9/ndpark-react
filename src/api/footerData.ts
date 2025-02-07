@@ -1,4 +1,4 @@
-const userLinks = [
+const footerUserLinks: LinkProps[] = [
   {
     key: "park-info",
     alt: "자연드림파크 소개",
@@ -26,7 +26,7 @@ const userLinks = [
   },
 ];
 
-const familySiteLinks = [
+const footerFamilySiteLinks: LinkProps[] = [
   {
     key: "placeholder",
     alt: "패밀리 사이트",
@@ -102,7 +102,7 @@ interface CorporateInfo {
   tel: string;
   address: string;
 }
-const corporateInfos: CorporateInfo[] = [
+const footerCorporateInfos: CorporateInfo[] = [
   {
     key: "ndpark-production-coop",
     name: "자연드림 생산기업 협동조합",
@@ -133,4 +133,4 @@ const corporateInfos: CorporateInfo[] = [
 ];
 
 export type { CorporateInfo };
-export { userLinks, familySiteLinks, corporateInfos };
+export { footerUserLinks, footerFamilySiteLinks, footerCorporateInfos };

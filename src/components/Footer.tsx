@@ -10,7 +10,7 @@ import FooterFamilySiteSelect from "@components/Footer/FooterFamilySiteSelect";
 import { useViewPort } from "@utils/Viewport";
 import { media } from "@utils/media";
 
-import { footerNDParkLogo } from "@api/imageData";
+import { footerNDParkLogo } from "@api/image";
 import {
   getFooterUserLinks,
   getFooterFamilySiteLinks,
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
       <FooterLinkSection>
         <FooterUserLinkWrapper>
           {getFooterUserLinks().map((info) => (
-            <Link key={info.key} to={info.to ?? "javascript:;"}>
+            <Link key={info.key} to={info.to ?? ""}>
               {info.alt}
             </Link>
           ))}
