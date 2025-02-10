@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Container from "@components/Container";
 import Image from "@components/Image";
 
+import { media } from "@utils/media";
+
 import {
   headerNDParkLogo,
   mobileHeaderSideMenuIcon,
@@ -16,12 +18,17 @@ const StyledDiv = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
 const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 2.5rem;
+  height: 3.75rem;
   border-bottom: 1px solid var(--color-n-90);
+
+  ${media.tablet`
+    border: none;
+  `}
 
   & > * {
     display: flex;
@@ -39,7 +46,7 @@ const HeaderMenuSection: React.FC<{
           <Link to="https://www.naturaldreampark.co.kr/mobile/main.php#navigator">
             <Image image={mobileHeaderSideMenuIcon} />
           </Link>
-          <Link to="https://www.icoop.or.kr">
+          <Link to="/">
             <Image image={headerNDParkLogo} />
           </Link>
           <Link to="https://www.naturaldreampark.co.kr/mobile/wishlist.php">
@@ -49,7 +56,7 @@ const HeaderMenuSection: React.FC<{
       ) : (
         <>
           <StyledContainer>
-            <Link to="https://www.icoop.or.kr">
+            <Link to="/">
               <Image image={headerNDParkLogo} />
             </Link>
           </StyledContainer>

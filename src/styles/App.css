@@ -34,7 +34,7 @@ div#wrap {
 html {
   font-family: Pretendard, sans-serif;
   box-sizing: border-box;
-  font-size: 24px;
+  font-size: 1rem;
 }
 
 body {
@@ -43,6 +43,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* reset */
 button {
   font-weight: 600;
   outline: none;
@@ -51,8 +52,12 @@ a {
   text-decoration: none;
   color: inherit;
 }
-
-/* reset */
+hr,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
 body,
 th,
 td,

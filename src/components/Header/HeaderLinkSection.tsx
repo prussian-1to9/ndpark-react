@@ -11,28 +11,46 @@ import { headerINLogo } from "@api/image";
 const StyledDiv = styled.div`
   color: var(--color-n-20);
   background-color: var(--color-n-95);
+  height: 2.5rem;
   border-bottom: 1px solid var(--color-n-90);
 
-  font-size: 0.6rem;
+  font-size: 1rem;
+  font-weight: 500;
 `;
-
 const StyledContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
 `;
 
-const HeaderLinkWrapper = styled.div`
+const StyledUL = styled.ul`
   display: flex;
   align-items: center;
-  height: 1.5rem;
+  height: 100%;
 
-  & > * {
+  & * {
     display: flex;
-    align-items: center;
+  }
+`;
+const StyledLi = styled.li`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  list-style-type: none;
 
-    height: 100%;
-    padding: 0 0.5rem;
+  &.border-right {
+    border-right: 1px solid var(--color-n-90);
+  }
+  &.border-right:last-child {
+    border: none;
+  }
+  &.border-left {
+    border-left: 1px solid var(--color-n-90);
+  }
+  &.border-left:first-child {
+    border: none;
   }
 `;
 
@@ -43,23 +61,25 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
   return (
     <StyledDiv>
       <StyledContainer>
-        <HeaderLinkWrapper>
-          <Link to="https://www.naturaldreampark.co.kr">
-            <Image image={headerINLogo} />
-          </Link>
+        <StyledUL>
+          <StyledLi className="border-right">
+            <Link to="https://www.naturaldreampark.co.kr">
+              <Image image={headerINLogo} />
+            </Link>
+          </StyledLi>
           {getHeaderFamilySiteLinks().map((link) => (
-            <Link key={link.key} to={link.to}>
-              {link.alt}
-            </Link>
+            <StyledLi key={link.key} className="border-right">
+              <Link to={link.to}>{link.alt}</Link>
+            </StyledLi>
           ))}
-        </HeaderLinkWrapper>
-        <HeaderLinkWrapper>
+        </StyledUL>
+        <StyledUL>
           {getHeaderUserLinks(isSignedIn).map((link) => (
-            <Link key={link.key} to={link.to}>
-              {link.alt}
-            </Link>
+            <StyledLi key={link.key} className="border-left">
+              <Link to={link.to}>{link.alt}</Link>
+            </StyledLi>
           ))}
-        </HeaderLinkWrapper>
+        </StyledUL>
       </StyledContainer>
     </StyledDiv>
   );

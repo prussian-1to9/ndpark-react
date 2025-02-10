@@ -6,7 +6,8 @@ const StyledDiv = styled.div<{ isHovered: boolean }>`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 2.5rem;
+  height: 100%;
+  height: 3.75rem;
 
   text-align: center;
   font-size: 0.7rem;
@@ -16,6 +17,10 @@ const StyledDiv = styled.div<{ isHovered: boolean }>`
   border-bottom: 2px solid
     ${(props) => (props.isHovered ? "var(--color-p-30)" : "transparent")};
   transition: border-bottom 0.3s;
+
+  &:hover a {
+    color: var(--color-p-30);
+  }
 `;
 
 const HeaderMenu: React.FC<{

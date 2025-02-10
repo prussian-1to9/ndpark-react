@@ -14,8 +14,10 @@ import { Link } from "react-router-dom";
 import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
 
 const StyledHeader = styled.header`
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 100;
 
   background-color: white;
@@ -34,7 +36,7 @@ const HeaderGridContainer = styled(Container)`
   & a {
     width: 100%;
     text-align: center;
-    font-size: 0.7rem;
+    font-size: 1rem;
     line-height: 1.8rem;
   }
   & a:hover {
@@ -46,8 +48,8 @@ const HeaderGridContainer = styled(Container)`
 const Header: React.FC = () => {
   const { isMobile } = useViewPort();
 
-  //   const isSignedIn = false; // TODO
-  const isSignedIn = true;
+  const isSignedIn = false; // TODO
+  // const isSignedIn = true; // TODO
   const [hoveredMenu, setHoveredMenu] = useState("");
   const [isDetailMenuOpen, setIsDetailMenuOpen] = useState(false);
 
