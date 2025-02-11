@@ -24,7 +24,7 @@ const StyledContainer = styled(Container)`
   height: 100%;
 `;
 
-const StyledUL = styled.ul`
+const StyledUl = styled.ul`
   display: flex;
   align-items: center;
   height: 100%;
@@ -38,7 +38,6 @@ const StyledLi = styled.li`
   align-items: center;
   height: 100%;
   padding: 0 1rem;
-  list-style-type: none;
 
   &.border-right {
     border-right: 1px solid var(--color-n-90);
@@ -61,7 +60,7 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
   return (
     <StyledDiv>
       <StyledContainer>
-        <StyledUL>
+        <StyledUl>
           <StyledLi className="border-right">
             <Link to="https://www.naturaldreampark.co.kr">
               <Image image={headerINLogo} />
@@ -72,14 +71,14 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
               <Link to={link.to}>{link.alt}</Link>
             </StyledLi>
           ))}
-        </StyledUL>
-        <StyledUL>
+        </StyledUl>
+        <StyledUl>
           {getHeaderUserLinks(isSignedIn).map((link) => (
             <StyledLi key={link.key} className="border-left">
               <Link to={link.to}>{link.alt}</Link>
             </StyledLi>
           ))}
-        </StyledUL>
+        </StyledUl>
       </StyledContainer>
     </StyledDiv>
   );

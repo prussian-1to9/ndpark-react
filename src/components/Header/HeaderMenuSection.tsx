@@ -1,17 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FiMenu, FiShoppingCart } from "react-icons/fi";
 
 import Container from "@components/Container";
 import Image from "@components/Image";
 
 import { media } from "@utils/media";
-
-import {
-  headerNDParkLogo,
-  mobileHeaderSideMenuIcon,
-  mobileHeaderCartMenuIcon,
-} from "@api/image";
+import { headerNDParkLogo } from "@api/image";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -30,13 +26,19 @@ const StyledContainer = styled(Container)`
     border: none;
   `}
 
-  & > * {
+  & * {
     display: flex;
+    align-items: center;
+  }
+  & svg {
+    height: 2rem;
+    width: auto;
+    color: var(--color-n-10);
   }
 `;
 
 const HeaderMenuSection: React.FC<{
-  children: React.ReactNode;
+  children?: React.ReactNode;
   isMobile: boolean;
 }> = ({ children, isMobile }) => {
   return (
@@ -44,13 +46,13 @@ const HeaderMenuSection: React.FC<{
       {isMobile ? (
         <StyledContainer>
           <Link to="https://www.naturaldreampark.co.kr/mobile/main.php#navigator">
-            <Image image={mobileHeaderSideMenuIcon} />
+            <FiMenu />
           </Link>
           <Link to="/">
             <Image image={headerNDParkLogo} />
           </Link>
           <Link to="https://www.naturaldreampark.co.kr/mobile/wishlist.php">
-            <Image image={mobileHeaderCartMenuIcon} />
+            <FiShoppingCart />
           </Link>
         </StyledContainer>
       ) : (

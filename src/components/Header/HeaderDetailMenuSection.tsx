@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   background-color: var(--color-n-95);
-  padding-bottom: 0.5rem;
+  padding: 0.25rem 0 1rem 0;
 `;
 
 const HeaderDetailMenuSection: React.FC<{

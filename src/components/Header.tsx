@@ -37,7 +37,7 @@ const HeaderGridContainer = styled(Container)`
     width: 100%;
     text-align: center;
     font-size: 1rem;
-    line-height: 1.8rem;
+    line-height: 2.5rem;
   }
   & a:hover {
     font-weight: 600;
@@ -59,44 +59,46 @@ const Header: React.FC = () => {
     setIsDetailMenuOpen(key !== "");
   };
 
+  if (isMobile)
+    return (
+      <StyledHeader>
+        <HeaderMenuSection isMobile={isMobile} />
+      </StyledHeader>
+    );
+
   return (
     <StyledHeader>
-      {!isMobile && <HeaderLinkSection isSignedIn={isSignedIn} />}
-
+      <HeaderLinkSection isSignedIn={isSignedIn} />
       <HeaderMenuSection isMobile={isMobile}>
-        {!isMobile && (
-          <HeaderGridContainer>
-            {getHeaderMenuLinks().map((link) => (
-              <HeaderMenu
-                link={link}
-                hoveredMenu={hoveredMenu}
-                hoverFunc={handleMenuMouseHover}
-              />
-            ))}
-          </HeaderGridContainer>
-        )}
+        <HeaderGridContainer>
+          {getHeaderMenuLinks().map((link) => (
+            <HeaderMenu
+              link={link}
+              hoveredMenu={hoveredMenu}
+              hoverFunc={handleMenuMouseHover}
+            />
+          ))}
+        </HeaderGridContainer>
       </HeaderMenuSection>
 
-      {!isMobile && (
-        <HeaderDetailMenuSection isDetailMenuOpen={isDetailMenuOpen}>
-          <HeaderGridContainer>
-            {getHeaderMenuLinks().map((link) => (
-              <StyledDiv>
-                {getHeaderDetailMenuLinks(link.key).map((detailLink) => (
-                  <Link
-                    key={detailLink.key}
-                    to={detailLink.to}
-                    onMouseEnter={() => handleMenuMouseHover(link.key)}
-                    onMouseLeave={() => handleMenuMouseHover("")}
-                  >
-                    {detailLink.alt}
-                  </Link>
-                ))}
-              </StyledDiv>
-            ))}
-          </HeaderGridContainer>
-        </HeaderDetailMenuSection>
-      )}
+      <HeaderDetailMenuSection isDetailMenuOpen={isDetailMenuOpen}>
+        <HeaderGridContainer>
+          {getHeaderMenuLinks().map((link) => (
+            <StyledDiv>
+              {getHeaderDetailMenuLinks(link.key).map((detailLink) => (
+                <Link
+                  key={detailLink.key}
+                  to={detailLink.to}
+                  onMouseEnter={() => handleMenuMouseHover(link.key)}
+                  onMouseLeave={() => handleMenuMouseHover("")}
+                >
+                  {detailLink.alt}
+                </Link>
+              ))}
+            </StyledDiv>
+          ))}
+        </HeaderGridContainer>
+      </HeaderDetailMenuSection>
     </StyledHeader>
   );
 };

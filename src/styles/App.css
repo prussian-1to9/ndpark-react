@@ -1,11 +1,58 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* prettier-ignore */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+html {
+  font-family: Pretendard, sans-serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* reset */
+button {
+  font-weight: 600;
+  outline: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+address {
+  font-style: normal;
+}
+body,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.7px;
+  font-family: "Pretendard", "Noto Sans KR", "맑은 고딕", sans-serif;
+  color: var(--color-n-10);
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* colors */
 div#wrap {
-  /* colors */
   --color-p: #a01749;
   --color-p-10: #4d0b23;
   --color-p-20: #7a1138;
@@ -30,46 +77,4 @@ div#wrap {
   --color-n-90: #e6e6e6;
   --color-n-95: #f3f3f3;
   /* --color-n-99: #fafafa; */
-}
-html {
-  font-family: Pretendard, sans-serif;
-  box-sizing: border-box;
-  font-size: 1rem;
-}
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* reset */
-button {
-  font-weight: 600;
-  outline: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-hr,
-ul,
-li {
-  margin: 0;
-  padding: 0;
-}
-body,
-th,
-td,
-input,
-select,
-textarea,
-button {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  letter-spacing: -0.7px;
-  font-family: "Pretendard", "Noto Sans KR", "맑은 고딕", sans-serif;
-  color: var(--color-n-10);
-  word-break: keep-all;
-  word-wrap: break-word;
 }

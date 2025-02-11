@@ -9,17 +9,30 @@ const StyledContainer = styled(Container)`
   justify-content: space-between;
   align-items: center;
 
-  margin: 0 auto;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-
   ${media.tablet`
     flex-direction: column;
-    gap: 1rem;
   `}
-  ${media.mobile`
-    font-size: 0.2rem;
-  `}
+
+  & a, & select {
+    line-height: 3.75rem;
+    font-size: 0.9rem;
+
+    ${media.tablet`
+      line-height: 3rem;
+    `}
+    ${media.mobile`
+      line-height: 2.5rem;
+      font-size: 0.8rem;
+    `}
+  }
+
+  & a {
+    padding: 0 1rem;
+
+    ${media.tablet`
+      padding: 0 0.5rem;
+    `}
+  }
 `;
 
 const FooterLinkSection: React.FC<{ children: React.ReactNode }> = ({
