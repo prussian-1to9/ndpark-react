@@ -19,8 +19,12 @@ body {
 
 /* reset */
 button {
-  font-weight: 600;
+  font-weight: 500;
   outline: none;
+}
+button:hover {
+  font-weight: 500;
+  cursor: pointer;
 }
 a {
   text-decoration: none;

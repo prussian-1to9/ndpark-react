@@ -38,16 +38,15 @@ const StyledContainer = styled(Container)`
 `;
 
 const HeaderMenuSection: React.FC<{
-  children?: React.ReactNode;
   isMobile: boolean;
-}> = ({ children, isMobile }) => {
+  children?: React.ReactNode;
+  setshowNavMenu?: React.Dispatch<React.SetStateAction<boolean>>;
+}> = ({ children, isMobile, setshowNavMenu }) => {
   return (
     <StyledDiv>
       {isMobile ? (
         <StyledContainer>
-          <Link to="https://www.naturaldreampark.co.kr/mobile/main.php#navigator">
-            <FiMenu />
-          </Link>
+          <FiMenu onClick={() => setshowNavMenu && setshowNavMenu(true)} />
           <Link to="/">
             <Image image={headerNDParkLogo} />
           </Link>

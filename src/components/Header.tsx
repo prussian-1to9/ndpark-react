@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import NavMenu from "@components/NavMenu";
 import Container from "@components/Container";
 import HeaderMenu from "@components/Header/HeaderMenu";
 
@@ -18,7 +19,7 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 5;
 
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -52,6 +53,7 @@ const Header: React.FC = () => {
   // const isSignedIn = true; // TODO
   const [hoveredMenu, setHoveredMenu] = useState("");
   const [isDetailMenuOpen, setIsDetailMenuOpen] = useState(false);
+  const [showNavMenu, setShowNavMenu] = useState(false);
 
   const handleMenuMouseHover = (key: string | undefined) => {
     key = key ?? "";
@@ -61,45 +63,57 @@ const Header: React.FC = () => {
 
   if (isMobile)
     return (
-      <StyledHeader>
-        <HeaderMenuSection isMobile={isMobile} />
-      </StyledHeader>
+      <>
+        {showNavMenu && (
+          <NavMenu isSignedIn={isSignedIn} setShowNavMenu={setShowNavMenu} />
+        )}
+        <StyledHeader>
+          <HeaderMenuSection
+            isMobile={isMobile}
+            setshowNavMenu={setShowNavMenu}
+          />
+        </StyledHeader>
+      </>
     );
 
   return (
-    <StyledHeader>
-      <HeaderLinkSection isSignedIn={isSignedIn} />
-      <HeaderMenuSection isMobile={isMobile}>
-        <HeaderGridContainer>
-          {getHeaderMenuLinks().map((link) => (
-            <HeaderMenu
-              link={link}
-              hoveredMenu={hoveredMenu}
-              hoverFunc={handleMenuMouseHover}
-            />
-          ))}
-        </HeaderGridContainer>
-      </HeaderMenuSection>
+    <>
+      <NavMenu />
+      <StyledHeader>
+        <HeaderLinkSection isSignedIn={isSignedIn} />
+        <HeaderMenuSection isMobile={isMobile}>
+          <HeaderGridContainer>
+            {getHeaderMenuLinks().map((link) => (
+              <HeaderMenu
+                key={link.key}
+                link={link}
+                hoveredMenu={hoveredMenu}
+                hoverFunc={handleMenuMouseHover}
+              />
+            ))}
+          </HeaderGridContainer>
+        </HeaderMenuSection>
 
-      <HeaderDetailMenuSection isDetailMenuOpen={isDetailMenuOpen}>
-        <HeaderGridContainer>
-          {getHeaderMenuLinks().map((link) => (
-            <StyledDiv>
-              {getHeaderDetailMenuLinks(link.key).map((detailLink) => (
-                <Link
-                  key={detailLink.key}
-                  to={detailLink.to}
-                  onMouseEnter={() => handleMenuMouseHover(link.key)}
-                  onMouseLeave={() => handleMenuMouseHover("")}
-                >
-                  {detailLink.alt}
-                </Link>
-              ))}
-            </StyledDiv>
-          ))}
-        </HeaderGridContainer>
-      </HeaderDetailMenuSection>
-    </StyledHeader>
+        <HeaderDetailMenuSection isDetailMenuOpen={isDetailMenuOpen}>
+          <HeaderGridContainer>
+            {getHeaderMenuLinks().map((link) => (
+              <StyledDiv key={link.key}>
+                {getHeaderDetailMenuLinks(link.key).map((detailLink) => (
+                  <Link
+                    key={detailLink.key}
+                    to={detailLink.to}
+                    onMouseEnter={() => handleMenuMouseHover(link.key)}
+                    onMouseLeave={() => handleMenuMouseHover("")}
+                  >
+                    {detailLink.alt}
+                  </Link>
+                ))}
+              </StyledDiv>
+            ))}
+          </HeaderGridContainer>
+        </HeaderDetailMenuSection>
+      </StyledHeader>
+    </>
   );
 };
 

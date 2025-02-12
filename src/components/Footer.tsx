@@ -36,10 +36,8 @@ const Footer: React.FC = () => {
       <FooterLinkContainer>
         <StyledUl>
           {getFooterUserLinks().map((info) => (
-            <li>
-              <Link key={info.key} to={info.to ?? ""}>
-                {info.alt}
-              </Link>
+            <li key={info.key}>
+              <Link to={info.to}>{info.alt}</Link>
             </li>
           ))}
         </StyledUl>

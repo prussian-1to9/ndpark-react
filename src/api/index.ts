@@ -1,9 +1,5 @@
 import type { CorporateInfo } from "./footerData";
-import {
-  footerUserLinks,
-  footerFamilySiteLinks,
-  footerCorporateInfos,
-} from "./footerData";
+import type { BannerInfo } from "./bannerData";
 import {
   headerFamilySiteLinks,
   signedInHeaderUserLinks,
@@ -11,6 +7,13 @@ import {
   headerMenuLinks,
   headerDetailMenuLinks,
 } from "./headerData";
+import {
+  footerUserLinks,
+  footerFamilySiteLinks,
+  footerCorporateInfos,
+} from "./footerData";
+import { navmenuMobileLinks, navmenuPCLinks } from "./navData";
+import { mainBannerInfos } from "./bannerData";
 
 /* =============== [ header ] =============== */
 const getHeaderFamilySiteLinks = (): LinkProps[] => {
@@ -37,7 +40,16 @@ const getFooterCorporateInfos = (): CorporateInfo[] => {
   return footerCorporateInfos;
 };
 
-export type { CorporateInfo };
+/* =============== [ nav menu ] =============== */
+const getNavMenuLinks = (key?: string, isMobile?: boolean): LinkProps[] => {
+  if (!key) return [];
+  return isMobile ? navmenuMobileLinks[key] : navmenuPCLinks[key];
+};
+/* =============== [ banners ] =============== */
+const getMainBannerInfos = (): BannerInfo[] => {
+  return mainBannerInfos;
+};
+export type { BannerInfo, CorporateInfo };
 export {
   getHeaderFamilySiteLinks,
   getHeaderUserLinks,
@@ -46,4 +58,6 @@ export {
   getFooterUserLinks,
   getFooterFamilySiteLinks,
   getFooterCorporateInfos,
+  getNavMenuLinks,
+  getMainBannerInfos,
 };

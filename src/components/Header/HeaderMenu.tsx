@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const StyledDiv = styled.div<{ isHovered: boolean }>`
+const StyledDiv = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
@@ -14,10 +14,13 @@ const StyledDiv = styled.div<{ isHovered: boolean }>`
   font-weight: 600;
 
   justify-content: center;
-  border-bottom: 2px solid
-    ${(props) => (props.isHovered ? "var(--color-p-30)" : "transparent")};
+  border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 
+  &.active {
+    border-bottom: 2px solid var(--color-p-30);
+    color: var(--color-p-30);
+  }
   &:hover a {
     color: var(--color-p-30);
   }
@@ -30,7 +33,7 @@ const HeaderMenu: React.FC<{
 }> = ({ link, hoveredMenu, hoverFunc }) => {
   return (
     <StyledDiv
-      isHovered={hoveredMenu === link.key}
+      className={hoveredMenu === link.key ? "active" : ""}
       onMouseEnter={() => hoverFunc(link.key)}
       onMouseLeave={() => hoverFunc("")}
     >
