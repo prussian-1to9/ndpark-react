@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import NavMenu from "@components/NavMenu";
 import Container from "@components/Container";
@@ -11,7 +12,6 @@ import HeaderDetailMenuSection from "@components/Header/HeaderDetailMenuSection"
 
 import { useViewPort } from "@utils/Viewport";
 
-import { Link } from "react-router-dom";
 import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
 
 const StyledHeader = styled.header`

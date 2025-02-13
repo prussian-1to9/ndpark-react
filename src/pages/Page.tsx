@@ -11,7 +11,7 @@ const StyledMain = styled.main`
   margin-top: 10rem;
 
   ${media.tablet`
-    margin-top: 2.5rem;
+    margin-top: 3.75rem;
   `}
 `;
 

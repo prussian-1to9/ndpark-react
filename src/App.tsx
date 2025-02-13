@@ -11,8 +11,13 @@ const App: React.FC = () => {
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <Routes>
+        <Route path="/auth">
+          <Route path="login" element={<div>Login</div>} />
+          <Route path="signup" element={<div>Signup</div>} />
+        </Route>
         <Route path="/" element={<Page />}>
           <Route index element={<MainPage />} />
+          <Route path="/mypage" element={<div>MyPage</div>} />
         </Route>
         <Route path="*" element={<div>Not Found</div>} />
       </Routes>

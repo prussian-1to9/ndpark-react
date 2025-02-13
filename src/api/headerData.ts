@@ -13,13 +13,13 @@ const headerFamilySiteLinks: LinkProps[] = [
 
 const signedInHeaderUserLinks: LinkProps[] = [
   {
-    key: "login",
+    key: "logout",
     to: "https://www.naturaldreampark.co.kr/lougout.php",
     alt: "로그아웃",
   },
   {
     key: "mypage",
-    to: "https://www.naturaldreampark.co.kr/mypage.html",
+    to: "/mypage",
     alt: "마이페이지",
   },
   {
@@ -29,7 +29,7 @@ const signedInHeaderUserLinks: LinkProps[] = [
   },
   {
     key: "wishlist",
-    to: "https://www.naturaldreampark.co.kr//wishlist.php?type=B",
+    to: "https://www.naturaldreampark.co.kr/wishlist.php?type=B",
     alt: "장바구니",
   },
 ];
@@ -37,12 +37,12 @@ const signedInHeaderUserLinks: LinkProps[] = [
 const signedOutHeaderUserLinks: LinkProps[] = [
   {
     key: "login",
-    to: "https://www.naturaldreampark.co.kr/login.html",
+    to: "/auth/login",
     alt: "로그인",
   },
   {
     key: "mypage",
-    to: "https://www.naturaldreampark.co.kr/mypage.html",
+    to: "/mypage",
     alt: "마이페이지",
   },
   {

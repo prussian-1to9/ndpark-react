@@ -10,3 +10,10 @@ type ImageProps = {
   width?: number;
   height?: number;
 };
+
+interface BannerProps {
+  key: string;
+  to?: string;
+  image: ImageProps;
+  mobileImage?: ImageProps;
+}

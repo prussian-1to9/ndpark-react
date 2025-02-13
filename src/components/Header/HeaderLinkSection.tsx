@@ -62,7 +62,7 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
       <StyledContainer>
         <StyledUl>
           <StyledLi className="border-right">
-            <Link to="https://www.naturaldreampark.co.kr">
+            <Link to="https://www.icoop.or.kr/coopmall/">
               <Image image={headerINLogo} />
             </Link>
           </StyledLi>

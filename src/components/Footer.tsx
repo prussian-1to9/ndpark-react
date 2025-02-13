@@ -7,7 +7,6 @@ import FooterInfoContainer from "@components/Footer/FooterInfoContainer";
 import FooterFamilySiteSelect from "@components/Footer/FooterFamilySiteSelect";
 import FooterCorporateAddress from "@components/Footer/FooterCorporateAddress";
 
-import { media } from "@utils/media";
 import {
   getFooterUserLinks,
   getFooterFamilySiteLinks,

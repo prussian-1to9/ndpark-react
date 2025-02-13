@@ -1,0 +1,6 @@
+.swiper-slide img {
+  width: 100%;
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--color-p-40);
+}

@@ -70,6 +70,18 @@ div#wrap {
   --color-p-95: #fcf8fa;
   --color-p-99: #fefdfd;
 
+  --color-s-10: #043a3b;
+  --color-s-20: #097678;
+  --color-s-30: #0fc2c6;
+  --color-s-40: #51d3d6;
+  --color-s-50: #6fdadd;
+  --color-s-60: #90e3e5;
+  --color-s-70: #bceeef;
+  --color-s-80: #dcf6f7;
+  --color-s-90: #f1fbfc;
+  --color-s-95: #f3fcfc;
+  --color-s-99: #f8fdfd;
+
   --color-n-10: #252525;
   --color-n-20: #333333;
   /* --color-n-30: #3C3C3C; */
