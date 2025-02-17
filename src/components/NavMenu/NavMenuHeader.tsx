@@ -70,7 +70,14 @@ const NavMenuHeader: React.FC<{
           </StyledUl>
         </>
       ) : (
-        <h3>로그인 후 이용 바랍니다.</h3>
+        <>
+          <h3>로그인 후 이용 바랍니다.</h3>
+          <StyledUl>
+            <li>
+              <Link to="/signin">로그인</Link>
+            </li>
+          </StyledUl>
+        </>
       )}
     </StyledDiv>
   );

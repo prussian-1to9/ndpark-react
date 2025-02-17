@@ -56,7 +56,6 @@ const StyledDiv = styled.div`
   }
 `;
 
-const StyledUl = styled.ul``;
 const NavMenu: React.FC<{
   isSignedIn?: boolean;
   setShowNavMenu?: React.Dispatch<React.SetStateAction<boolean>>;

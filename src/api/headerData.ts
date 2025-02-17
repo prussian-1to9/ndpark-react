@@ -13,8 +13,8 @@ const headerFamilySiteLinks: LinkProps[] = [
 
 const signedInHeaderUserLinks: LinkProps[] = [
   {
-    key: "logout",
-    to: "https://www.naturaldreampark.co.kr/lougout.php",
+    key: "signout",
+    to: "/signout",
     alt: "로그아웃",
   },
   {
@@ -36,8 +36,8 @@ const signedInHeaderUserLinks: LinkProps[] = [
 
 const signedOutHeaderUserLinks: LinkProps[] = [
   {
-    key: "login",
-    to: "/auth/login",
+    key: "signin",
+    to: "/signin",
     alt: "로그인",
   },
   {

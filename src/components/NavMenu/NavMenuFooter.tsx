@@ -24,6 +24,14 @@ const StyledDiv = styled.div`
 
 const NavMenuFooter: React.FC<{ isSignedIn: boolean }> = ({ isSignedIn }) => {
   const navigate = useNavigate();
+  const handleNavMenuButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const { key } = e.currentTarget.dataset;
+    if (!key) return;
+
+    if (key === "signout") navigate("/signout");
+    else if (key === "home") navigate("/");
+    return;
+  };
 
   return (
     <StyledDiv>
@@ -31,14 +39,18 @@ const NavMenuFooter: React.FC<{ isSignedIn: boolean }> = ({ isSignedIn }) => {
         <b>고객센터</b> Tel. 1833-5753
       </Link>
       {isSignedIn && (
-        <NavMenuButton type="button" data-key="mypage">
+        <NavMenuButton
+          type="button"
+          data-key="signout"
+          onClick={handleNavMenuButtonClick}
+        >
           로그아웃
         </NavMenuButton>
       )}
       <NavMenuButton
-        onClick={() => {
-          navigate("/");
-        }}
+        type="button"
+        data-key="home"
+        onClick={handleNavMenuButtonClick}
       >
         Home
       </NavMenuButton>

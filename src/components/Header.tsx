@@ -48,9 +48,9 @@ const HeaderGridContainer = styled(Container)`
 
 const Header: React.FC = () => {
   const { isMobile } = useViewPort();
+  const isSignedIn: boolean =
+    localStorage.getItem(process.env.SIGNIN_CHECK_KEY || "") !== null;
 
-  const isSignedIn = false; // TODO
-  // const isSignedIn = true; // TODO
   const [hoveredMenu, setHoveredMenu] = useState("");
   const [isDetailMenuOpen, setIsDetailMenuOpen] = useState(false);
   const [showNavMenu, setShowNavMenu] = useState(false);
