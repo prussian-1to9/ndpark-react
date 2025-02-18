@@ -75,7 +75,7 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
         <StyledUl>
           {getHeaderUserLinks(isSignedIn).map((link) => (
             <StyledLi key={link.key} className="border-left">
-              <Link to={link.to}>{link.alt}</Link>
+              <Link to={`/${link.key}`}>{link.alt}</Link>
             </StyledLi>
           ))}
         </StyledUl>

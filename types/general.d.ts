@@ -3,6 +3,12 @@ type LinkProps = {
   alt: string;
   to: string;
 };
+type InnerLinkProps = {
+  key: string;
+  alt: string;
+  to?: string; // case of external link
+  onClick?: () => void;
+};
 
 type ImageProps = {
   src: string;

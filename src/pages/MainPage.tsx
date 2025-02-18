@@ -14,7 +14,6 @@ import { media } from "@utils/media";
 // swipers
 import "swiper/css";
 import "swiper/css/pagination";
-import "@styles/swiper.css";
 
 import {
   getIntroduceImages,

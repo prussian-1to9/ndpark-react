@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const InterpolateHtmlPlugin = require("interpolate-html-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const Dotenv = require("dotenv-webpack");
 
 const path = require("path");
@@ -7,15 +8,17 @@ const path = require("path");
 module.exports = (env) => {
   const mode = env.NODE_ENV ?? "development";
   const envFile = mode === "development" ? ".env.dev" : ".env";
+  const devTool = mode === "development" ? "inline-source-map" : "source-map";
 
   return {
     mode: mode,
     entry: "./src/index.tsx",
-    devtool: "inline-source-map",
+    devtool: devTool,
     output: {
-      filename: "bundle.js",
+      filename: "[name].[contenthash].js",
       path: path.resolve(__dirname, "dist"),
       publicPath: "/",
+      clean: true,
     },
     resolve: {
       extensions: [".ts", ".tsx", ".js"],
@@ -39,7 +42,7 @@ module.exports = (env) => {
         },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"],
+          use: ["style-loader", "css-loader", "postcss-loader"],
         },
         {
           test: /\.svg$/,
@@ -52,12 +55,28 @@ module.exports = (env) => {
         template: "./public/index.html",
       }),
       new InterpolateHtmlPlugin({
-        /** @FIXME when use HTML biases */
+        PUBLIC_URL: "public",
       }),
       new Dotenv({
         path: envFile,
       }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: "static",
+        openAnalyzer: false,
+        reportFilename: "bundle-report.html",
+      }),
     ],
+    performance: {
+      hints: false,
+      maxEntrypointSize: 512000,
+      maxAssetSize: 512000,
+    },
+    // optimization: {
+    //   splitChunks: {
+    //     chunks: "all",
+    //   },
+    //   runtimeChunk: "single",
+    // },
     devServer: {
       static: [
         { directory: path.join(__dirname, "dist") },
