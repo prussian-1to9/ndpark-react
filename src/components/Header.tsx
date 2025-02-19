@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 import NavMenu from "@components/NavMenu";
 import Container from "@components/Container";
-import HeaderMenu from "@components/Header/HeaderMenu";
 
+import HeaderMenu from "@components/Header/HeaderMenu";
 import HeaderLinkSection from "@components/Header/HeaderLinkSection";
 import HeaderMenuSection from "@components/Header/HeaderMenuSection";
 import HeaderDetailMenuSection from "@components/Header/HeaderDetailMenuSection";
@@ -23,11 +23,6 @@ const StyledHeader = styled.header`
 
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-const StyledDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const HeaderGridContainer = styled(Container)`
@@ -97,7 +92,7 @@ const Header: React.FC = () => {
         <HeaderDetailMenuSection isDetailMenuOpen={isDetailMenuOpen}>
           <HeaderGridContainer>
             {getHeaderMenuLinks().map((link) => (
-              <StyledDiv key={link.key}>
+              <div key={link.key} className="flex flex-col items-center">
                 {getHeaderDetailMenuLinks(link.key).map((detailLink) => (
                   <Link
                     key={detailLink.key}
@@ -108,7 +103,7 @@ const Header: React.FC = () => {
                     {detailLink.alt}
                   </Link>
                 ))}
-              </StyledDiv>
+              </div>
             ))}
           </HeaderGridContainer>
         </HeaderDetailMenuSection>

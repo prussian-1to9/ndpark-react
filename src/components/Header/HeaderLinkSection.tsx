@@ -6,7 +6,7 @@ import Image from "@components/Image";
 import Container from "@components/Container";
 
 import { getHeaderFamilySiteLinks, getHeaderUserLinks } from "@api/index";
-import { headerINLogo } from "@api/image";
+import { logoImageiN } from "@assets/image";
 
 const StyledDiv = styled.div`
   color: var(--color-n-20);
@@ -63,7 +63,7 @@ const HeaderLinkSection: React.FC<{ isSignedIn: boolean }> = ({
         <StyledUl>
           <StyledLi className="border-right">
             <Link to="https://www.icoop.or.kr/coopmall/">
-              <Image image={headerINLogo} />
+              <Image image={logoImageiN} />
             </Link>
           </StyledLi>
           {getHeaderFamilySiteLinks().map((link) => (

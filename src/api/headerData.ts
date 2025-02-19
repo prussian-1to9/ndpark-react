@@ -11,45 +11,34 @@ const headerFamilySiteLinks: LinkProps[] = [
   },
 ];
 
-const signedInHeaderUserLinks: LinkProps[] = [
-  {
-    key: "signout",
-    to: "/signout",
-    alt: "로그아웃",
-  },
+const headerUserLinks: InnerLinkProps[] = [
   {
     key: "mypage",
-    to: "/mypage",
     alt: "마이페이지",
   },
   {
-    key: "community",
-    to: "https://www.naturaldreampark.co.kr/board/community.html",
+    key: "cscenter",
     alt: "고객센터",
   },
+];
+const signedInHeaderUserLinks: InnerLinkProps[] = [
+  {
+    key: "signout",
+    alt: "로그아웃",
+  },
+  ...headerUserLinks,
   {
     key: "wishlist",
-    to: "https://www.naturaldreampark.co.kr/wishlist.php?type=B",
     alt: "장바구니",
   },
 ];
 
-const signedOutHeaderUserLinks: LinkProps[] = [
+const signedOutHeaderUserLinks = [
   {
     key: "signin",
-    to: "/signin",
     alt: "로그인",
   },
-  {
-    key: "mypage",
-    to: "/mypage",
-    alt: "마이페이지",
-  },
-  {
-    key: "community",
-    to: "https://www.naturaldreampark.co.kr/board/community.html",
-    alt: "고객센터",
-  },
+  ...headerUserLinks,
 ];
 
 const headerMenuLinks: LinkProps[] = [
@@ -75,7 +64,7 @@ const headerMenuLinks: LinkProps[] = [
   },
   {
     key: "events",
-    to: "https://www.naturaldreampark.co.kr/festival3_history.html",
+    to: "/events",
     alt: "이벤트",
   },
 ];

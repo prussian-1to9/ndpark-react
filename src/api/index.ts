@@ -17,7 +17,7 @@ import { navmenuMobileLinks, navmenuPCLinks } from "./navData";
 const getHeaderFamilySiteLinks = (): LinkProps[] => {
   return headerFamilySiteLinks;
 };
-const getHeaderUserLinks = (isSignedIn = false): LinkProps[] => {
+const getHeaderUserLinks = (isSignedIn = false): InnerLinkProps[] => {
   return isSignedIn ? signedInHeaderUserLinks : signedOutHeaderUserLinks;
 };
 const getHeaderMenuLinks = (): LinkProps[] => {

@@ -8,7 +8,7 @@ import Container from "@components/Container";
 
 import AuthFooter from "@components/AuthPage/AuthFooter";
 
-import { headerNDParkLogo } from "@api/image";
+import { logoImageNDPark } from "@assets/image";
 
 const StyledContainer = styled(Container)`
   height: 100vh;
@@ -37,7 +37,7 @@ const AuthPage: React.FC = () => {
   return (
     <StyledContainer>
       <Link to="/">
-        <Image image={headerNDParkLogo} />
+        <Image image={logoImageNDPark} />
       </Link>
 
       <ConfigProvider

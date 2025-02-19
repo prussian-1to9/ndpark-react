@@ -37,12 +37,12 @@ const StyledButton = styled.button`
 const StyledContainer = styled(Container)`
   display: flex;
   gap: 1rem;
-  margin: 1rem auto;
   justify-content: space-between;
+  margin-bottom: 1rem;
 
   ${media.tablet`
-    margin: 0.5rem auto;
     flex-direction: column;
+    margin-bottom: 0.5rem;
   `}
 `;
 const ImageWrapper = styled.div`
@@ -80,45 +80,39 @@ const MainPage: React.FC = () => {
       <MainBannerSection banners={getMainBannerData()} />
       <NoticeSection notices={getNoticeData()} />
 
-      <StyledContainer>
-        <ImageWrapper>
-          <Image image={getIntroduceImages("stay")[0]} />
-          <Image image={getIntroduceImages("tour")[0]} />
-        </ImageWrapper>
-        {/**
-         * @FIXME when the reservation pages are ready, replace the link with the actual link
-         */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-around",
-            alignItems: "center",
-            gap: "1rem",
-          }}
-        >
-          <div style={{ width: "100%" }}>
-            <h3>자연드림파크 예약</h3>
+      <section>
+        <StyledContainer>
+          <ImageWrapper>
+            <Image image={getIntroduceImages("stay")[0]} />
+            <Image image={getIntroduceImages("tour")[0]} />
+          </ImageWrapper>
+          {/**
+           * @FIXME when the reservation pages are ready, replace the link with the actual link
+           */}
+          <div className="flex flex-col justify-around items-center gap-4">
+            <div className="w-full">
+              <h3 className="text-2xl font-semibold">자연드림파크 예약</h3>
+              <ImageWrapper>
+                <select onChange={handleParkChange} defaultValue={selectedPark}>
+                  <option value="">자연드림파크 선택</option>
+                  <option value="gurye">구례자연드림파크</option>
+                  <option value="goesan">괴산자연드림파크</option>
+                </select>
+                <select>
+                  <option>준비중</option>
+                </select>
+                <StyledButton>예약하기</StyledButton>
+              </ImageWrapper>
+            </div>
             <ImageWrapper>
-              <select onChange={handleParkChange} defaultValue={selectedPark}>
-                <option value="">자연드림파크 선택</option>
-                <option value="gurye">구례자연드림파크</option>
-                <option value="goesan">괴산자연드림파크</option>
-              </select>
-              <select>
-                <option>준비중</option>
-              </select>
-              <StyledButton>예약하기</StyledButton>
+              <Link to="https://www.naturaldreampark.co.kr/board/community_view.html?number=3186">
+                <Image image={getIntroduceImages("customerCenter")[0]} />
+              </Link>
+              <Image image={getIntroduceImages("reservation")[0]} />
             </ImageWrapper>
           </div>
-          <ImageWrapper>
-            <Link to="https://www.naturaldreampark.co.kr/board/community_view.html?number=3186">
-              <Image image={getIntroduceImages("customerCenter")[0]} />
-            </Link>
-            <Image image={getIntroduceImages("reservation")[0]} />
-          </ImageWrapper>
-        </div>
-      </StyledContainer>
+        </StyledContainer>
+      </section>
 
       <MovieSection movies={getMovieData()} />
     </>

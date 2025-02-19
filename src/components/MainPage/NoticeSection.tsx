@@ -9,31 +9,25 @@ import { Autoplay } from "swiper/modules";
 import Container from "@components/Container";
 
 import { useViewPort } from "@utils/Viewport";
-import { media } from "@utils/media";
 
 import type { NoticeProps } from "@api/mainpage";
 import { getNoticeTypeString } from "@api/mainpage";
 
-const StyledSwiperSlide = styled(SwiperSlide)`
+const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 3rem;
 
-  & b {
-    font-weight: 500;
+  & * {
+    display: flex;
   }
 `;
 const NoticeHeading = styled.h4`
+  align-items: center;
   font-size: 1rem;
-  width: 10rem;
+  gap: 0.5rem;
 
-  ${media.tablet`
-    width: 5rem;
-  `}
-  & svg {
-    margin-right: 0.5rem;
-  }
   &.goesan,
   &.goesan svg {
     color: var(--color-s-20);
@@ -61,27 +55,29 @@ const NoticeSection: React.FC<{ notices: NoticeProps[] }> = ({ notices }) => {
             delay: 3000,
             disableOnInteraction: false,
           }}
-          height={60}
+          height={48}
           autoHeight={true}
           loop={true}
         >
           {notices.map((notice) => (
-            <StyledSwiperSlide key={notice.uid}>
-              <NoticeHeading className={notice.type}>
-                <BsMegaphone />
-                <b>
-                  {`${getNoticeTypeString(notice.type)}${
-                    isMobile ? "" : "자연드림파크"
-                  }`}
-                </b>
-              </NoticeHeading>
-              <Link
-                to={`https://www.naturaldreampark.co.kr/board/community_view.html?number=${notice.uid}`}
-              >
-                {notice.title}
-              </Link>
-              <p>{notice.date.toISOString().split("T")[0]}</p>
-            </StyledSwiperSlide>
+            <SwiperSlide key={notice.uid}>
+              <StyledDiv>
+                <NoticeHeading className={notice.type}>
+                  <BsMegaphone />
+                  <b className="font-medium">
+                    {`${getNoticeTypeString(notice.type)}${
+                      isMobile ? "" : "자연드림파크"
+                    }`}
+                  </b>
+                </NoticeHeading>
+                <Link
+                  to={`https://www.naturaldreampark.co.kr/board/community_view.html?number=${notice.uid}`}
+                >
+                  {notice.title}
+                </Link>
+                <p>{notice.date.toISOString().split("T")[0]}</p>
+              </StyledDiv>
+            </SwiperSlide>
           ))}
         </Swiper>
       </Container>

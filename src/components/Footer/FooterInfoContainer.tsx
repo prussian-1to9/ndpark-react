@@ -6,7 +6,7 @@ import Container from "@components/Container";
 
 import { media } from "@utils/media";
 
-import { footerNDParkLogo } from "@api/image";
+import { logoImageNDParkFooter } from "@assets/image";
 
 const StyledContainer = styled(Container)`
   position: relative;
@@ -38,7 +38,7 @@ const FooterInfoSection: React.FC<{ children: React.ReactNode }> = ({
 }) => {
   return (
     <StyledContainer>
-      <Image image={footerNDParkLogo} />
+      <Image image={logoImageNDParkFooter} />
       {children}
     </StyledContainer>
   );

@@ -7,7 +7,7 @@ import Container from "@components/Container";
 import Image from "@components/Image";
 
 import { media } from "@utils/media";
-import { headerNDParkLogo } from "@api/image";
+import { logoImageNDPark } from "@assets/image";
 
 const StyledDiv = styled.div`
   display: flex;
@@ -42,28 +42,30 @@ const HeaderMenuSection: React.FC<{
   children?: React.ReactNode;
   setshowNavMenu?: React.Dispatch<React.SetStateAction<boolean>>;
 }> = ({ children, isMobile, setshowNavMenu }) => {
-  return (
-    <StyledDiv>
-      {isMobile ? (
+  if (isMobile) {
+    return (
+      <StyledDiv>
         <StyledContainer>
           <FiMenu onClick={() => setshowNavMenu && setshowNavMenu(true)} />
           <Link to="/">
-            <Image image={headerNDParkLogo} />
+            <Image image={logoImageNDPark} />
           </Link>
-          <Link to="https://www.naturaldreampark.co.kr/mobile/wishlist.php">
+          <Link to="/wishlist">
             <FiShoppingCart />
           </Link>
         </StyledContainer>
-      ) : (
-        <>
-          <StyledContainer>
-            <Link to="/">
-              <Image image={headerNDParkLogo} />
-            </Link>
-          </StyledContainer>
-          {children}
-        </>
-      )}
+      </StyledDiv>
+    );
+  }
+
+  return (
+    <StyledDiv>
+      <StyledContainer>
+        <Link to="/">
+          <Image image={logoImageNDPark} />
+        </Link>
+      </StyledContainer>
+      {children}
     </StyledDiv>
   );
 };
