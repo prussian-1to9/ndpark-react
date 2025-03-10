@@ -7,3 +7,6 @@ public/favicons/*.ico
 
 # mockup data
 mock.json
+
+# configs
+.env*

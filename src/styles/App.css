@@ -1,23 +1,86 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+/* prettier-ignore */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
+html {
+  font-family: Pretendard, sans-serif;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* reset */
+button {
+  font-weight: 500;
+  outline: none;
+}
+button:hover {
+  font-weight: 500;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+address {
+  font-style: normal;
+}
+body,
+th,
+td,
+input,
+select,
+textarea,
+button {
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: -0.7px;
+  font-family: "Pretendard", "Noto Sans KR", "맑은 고딕", sans-serif;
+  color: var(--color-n-10);
+  word-break: keep-all;
+  word-wrap: break-word;
+}
+
+/* colors */
 div#wrap {
-  /* colors */
   --color-p: #a01749;
   --color-p-10: #4d0b23;
   --color-p-20: #7a1138;
   --color-p-30: #a01749;
-  --color-p-40: #ba577b;
-  --color-p-50: #c67492;
+  --color-p-40: #bf4572;
+  --color-p-50: #e3719b;
   --color-p-60: #d394ab;
   --color-p-70: #e5becc;
   --color-p-80: #f1dde5;
   --color-p-90: #f9f1f4;
   --color-p-95: #fcf8fa;
   --color-p-99: #fefdfd;
+
+  --color-s-10: #043a3b;
+  --color-s-20: #097678;
+  --color-s-30: #0fc2c6;
+  --color-s-40: #51d3d6;
+  --color-s-50: #6fdadd;
+  --color-s-60: #90e3e5;
+  --color-s-70: #bceeef;
+  --color-s-80: #dcf6f7;
+  --color-s-90: #f1fbfc;
+  --color-s-95: #f3fcfc;
+  --color-s-99: #f8fdfd;
 
   --color-n-10: #252525;
   --color-n-20: #333333;
@@ -30,41 +93,4 @@ div#wrap {
   --color-n-90: #e6e6e6;
   --color-n-95: #f3f3f3;
   /* --color-n-99: #fafafa; */
-}
-html {
-  font-family: Pretendard, sans-serif;
-  box-sizing: border-box;
-  font-size: 24px;
-}
-
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-button {
-  font-weight: 600;
-  outline: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* reset */
-body,
-th,
-td,
-input,
-select,
-textarea,
-button {
-  font-size: 1.5rem;
-  line-height: 1.6;
-  letter-spacing: -0.7px;
-  font-family: "Pretendard", "Noto Sans KR", "맑은 고딕", sans-serif;
-  color: var(--color-n-10);
-  word-break: keep-all;
-  word-wrap: break-word;
 }

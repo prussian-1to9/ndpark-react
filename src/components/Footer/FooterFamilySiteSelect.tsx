@@ -5,7 +5,6 @@ const StyledSelect = styled.select`
   width: fit-content;
   height: fit-content;
   padding: 0.5rem;
-  font-size: 0.6rem;
 
   border: 1px solid var(--color-n-50);
   color: var(--color-n-50);

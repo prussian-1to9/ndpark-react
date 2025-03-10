@@ -2,15 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import Image from "@components/Image";
-import FooterLinkSection from "@components/Footer/FooterLinkSection";
-import FooterInfoSection from "@components/Footer/FooterInfoSection";
+import FooterLinkContainer from "@components/Footer/FooterLinkContainer";
+import FooterInfoContainer from "@components/Footer/FooterInfoContainer";
 import FooterFamilySiteSelect from "@components/Footer/FooterFamilySiteSelect";
+import FooterCorporateAddress from "@components/Footer/FooterCorporateAddress";
 
-import { useViewPort } from "@utils/Viewport";
-import { media } from "@utils/media";
-
-import { footerNDParkLogo } from "@api/imageData";
 import {
   getFooterUserLinks,
   getFooterFamilySiteLinks,
@@ -20,54 +16,30 @@ import {
 const StyledFooter = styled.footer`
   background-color: var(--color-n-20);
   color: white;
-
-  & p,
-  & b {
-    color: var(--color-n-50);
-    margin: 0;
-    padding: 0;
-    font-size: 0.6rem;
-  }
 `;
 
-const FooterUserLinkWrapper = styled.div`
+const StyledUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
 
-  ${media.tablet`
-    gap: 0.5rem;
-  `}
-
-  & > a {
-    font-size: 0.6rem;
-    margin: 0;
-    padding: 0 0.5rem;
-
-    ${media.mobile`
-      padding: 0.2rem;
-    `}
+  & * {
+    display: flex;
+    align-items: center;
   }
 `;
 
 const Footer: React.FC = () => {
-  const { isMobile } = useViewPort();
-
   return (
     <StyledFooter>
-      <FooterLinkSection>
-        <FooterUserLinkWrapper>
+      <FooterLinkContainer>
+        <StyledUl>
           {getFooterUserLinks().map((info) => (
-            <Link key={info.key} to={info.to ?? "javascript:;"}>
-              {info.alt}
-            </Link>
+            <li key={info.key}>
+              <Link to={info.to}>{info.alt}</Link>
+            </li>
           ))}
-          {isMobile && (
-            <Link to="https://www.naturaldreampark.co.kr/main.html?path=mobile">
-              PC 버전
-            </Link>
-          )}
-        </FooterUserLinkWrapper>
+        </StyledUl>
         <FooterFamilySiteSelect>
           {getFooterFamilySiteLinks().map((link) => (
             <option key={link.key} value={link.to}>
@@ -75,22 +47,12 @@ const Footer: React.FC = () => {
             </option>
           ))}
         </FooterFamilySiteSelect>
-      </FooterLinkSection>
-      <FooterInfoSection>
-        <Image image={footerNDParkLogo} />
+      </FooterLinkContainer>
+      <FooterInfoContainer>
         {getFooterCorporateInfos().map((info) => (
-          <div key={info.key}>
-            <b>{info.name}</b>
-            <p>
-              대표자 : {info.ceo} | 사업자등록번호 : {info.registrationNumber}
-            </p>
-            <p>
-              이메일: {info.email} | 전화 : {info.tel}
-            </p>
-            <p>주소 : {info.address}</p>
-          </div>
+          <FooterCorporateAddress key={info.key} info={info} />
         ))}
-      </FooterInfoSection>
+      </FooterInfoContainer>
     </StyledFooter>
   );
 };
