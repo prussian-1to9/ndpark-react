@@ -25,6 +25,7 @@ module.exports = (env) => {
       alias: {
         "@types": path.resolve(__dirname, "types/"),
         "@api": path.resolve(__dirname, "src/api/"),
+        "@routes": path.resolve(__dirname, "src/routes/"),
         "@utils": path.resolve(__dirname, "src/utils/"),
         "@components": path.resolve(__dirname, "src/components/"),
         "@pages": path.resolve(__dirname, "src/pages/"),
