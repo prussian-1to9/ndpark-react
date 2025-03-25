@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
+import { ArrivalBannerData } from "@api/mainpage/bannerData";
+
 import Image from "@components/Image";
 import Container from "@components/Container";
 
@@ -35,44 +37,15 @@ const NewMainBannerSection: React.FC = () => {
         loop={true}
         spaceBetween={30}
       >
-        <StyledSwiperSlide>
-          <Link to="https://www.naturaldreampark.co.kr/kanazawa/intro.html">
-            <Image
-              image={{
-                src: "https://www.naturaldreampark.co.kr/images/Xfile/kanazawa.webp",
-                alt: "가나자와 호텔",
-              }}
-            />
-            <h4 className="text-2xl">가나자와 호텔 예약 오픈</h4>
-            <p className="text-lg">
-              웰빙, 그리고 항암생활을 위한 자연드림 여행
-            </p>
-          </Link>
-        </StyledSwiperSlide>
-        <StyledSwiperSlide>
-          <Link to="https://www.naturaldreampark.co.kr/board/community_view.html?number=3822">
-            <Image
-              image={{
-                src: "https://www.naturaldreampark.co.kr/images/Xfile/fish-cake-soup.jpg",
-                alt: "어묵탕",
-              }}
-            />
-            <h4 className="text-2xl">디너·석식 패키지 오픈</h4>
-            <p className="text-lg">자연드림의 특별한 디너를 즐겨보세요</p>
-          </Link>
-        </StyledSwiperSlide>
-        <StyledSwiperSlide>
-          <Link to="https://www.naturaldreampark.co.kr/g_facilities_6.html">
-            <Image
-              image={{
-                src: "https://www.naturaldreampark.co.kr/images/Xfile/hanok.jpg",
-                alt: "전주집",
-              }}
-            />
-            <h4 className="text-2xl">전주집 오픈</h4>
-            <p className="text-lg">전이 주인인 집, 전주집이 오픈했습니다</p>
-          </Link>
-        </StyledSwiperSlide>
+        {ArrivalBannerData.map((banner) => (
+          <StyledSwiperSlide key={banner.key}>
+            <Link to={banner.to ?? ""}>
+              <Image image={banner.image} />
+              <h4 className="text-2xl">{banner.title}</h4>
+              <p className="text-lg">{banner.desc}</p>
+            </Link>
+          </StyledSwiperSlide>
+        ))}
       </Swiper>
     </Container>
   );

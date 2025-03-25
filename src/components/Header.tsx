@@ -41,7 +41,9 @@ const HeaderGridContainer = styled(Container)`
   }
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<{ display?: "none" | "block" }> = ({
+  display = "block",
+}) => {
   const { isMobile } = useViewPort();
   const isSignedIn: boolean =
     localStorage.getItem(process.env.SIGNIN_CHECK_KEY || "") !== null;
@@ -62,7 +64,7 @@ const Header: React.FC = () => {
         {showNavMenu && (
           <NavMenu isSignedIn={isSignedIn} setShowNavMenu={setShowNavMenu} />
         )}
-        <StyledHeader>
+        <StyledHeader style={{ display: display }}>
           <HeaderMenuSection
             isMobile={isMobile}
             setshowNavMenu={setShowNavMenu}
@@ -74,7 +76,7 @@ const Header: React.FC = () => {
   return (
     <>
       <NavMenu />
-      <StyledHeader>
+      <StyledHeader style={{ display: display }}>
         <HeaderLinkSection isSignedIn={isSignedIn} />
         <HeaderMenuSection isMobile={isMobile}>
           <HeaderGridContainer>
