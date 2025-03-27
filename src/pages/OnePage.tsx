@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 
 import Footer from "@components/Footer";
 import Header from "@components/Header";
+import ScrollArrow from "@components/ScrollArrow";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -51,7 +52,7 @@ const OnePageScroll: React.FC = () => {
     if (pageRef.current < 0) {
       pageRef.current = 0;
       setShowHeader(true);
-    } else if (pageRef.current > lastPage) {
+    } else if (pageRef.current >= lastPage) {
       pageRef.current = lastPage;
       setShowFooter(true);
     }
@@ -64,10 +65,10 @@ const OnePageScroll: React.FC = () => {
   const decreasePage = () => {
     pageRef.current--;
     setShowHeader(true);
+    setShowFooter(false);
   };
 
   const onWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
     if (checkScrolling() === false) return;
 
     if (e.deltaY > 0) increasePage();
@@ -82,8 +83,9 @@ const OnePageScroll: React.FC = () => {
   };
   const onTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
     if (checkScrolling() === false) return;
-    if (e.changedTouches[0].clientY < currentClientY) increasePage();
-    if (e.changedTouches[0].clientY > currentClientY) decreasePage();
+
+    if (e.changedTouches[0].clientY < currentClientY - 100) increasePage();
+    if (e.changedTouches[0].clientY > currentClientY + 100) decreasePage();
 
     checkPage();
     setTop(pageRef.current * -100 + "vh");
@@ -107,6 +109,7 @@ const OnePageScroll: React.FC = () => {
         </StyledDiv>
       </Wrapper>
       <Footer display={showFooter ? "block" : "none"} />
+      <ScrollArrow pageRef={pageRef} />
     </>
   );
 };

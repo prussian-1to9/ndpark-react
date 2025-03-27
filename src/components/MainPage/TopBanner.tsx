@@ -3,13 +3,14 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
-import { mainTopBannerData } from "@api/mainpage/bannerData";
+import { media } from "@utils/media";
+import { getTopBanners } from "@api/new-mainpage";
 
 import Image from "@components/Image";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
-  height: 60%;
+  height: 100%;
   cursor: grab;
   overflow: hidden;
 
@@ -19,15 +20,15 @@ const StyledSwiper = styled(Swiper)`
     align-items: center;
   }
   & .swiper-slide img {
-    width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   & .swiper-pagination {
-    top: 75% !important;
+    top: 60% !important;
+    ${media.mobile` top: 65% !important; `}
   }
   & .swiper-pagination-bullet {
-    background-color: white;
     position: relative;
     transition: 0.5s;
   }
@@ -91,8 +92,8 @@ const TopBanner: React.FC = () => {
       pagination={{ clickable: true }}
       modules={[Pagination, Autoplay]}
     >
-      {mainTopBannerData.map((banner, index) => (
-        <SwiperSlide key={index}>
+      {getTopBanners().map((banner, index) => (
+        <SwiperSlide key={`top-${index}`}>
           <Image image={banner.image} />
           <BannerText>
             <h3 className="text-3xl font-semibold">{banner.title}</h3>

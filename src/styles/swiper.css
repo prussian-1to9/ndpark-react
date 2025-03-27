@@ -2,5 +2,9 @@
   width: 100%;
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: var(--color-p-40);
+  background: var(--color-n-80);
+}
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--color-n-80);
 }

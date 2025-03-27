@@ -1,28 +1,46 @@
 import React from "react";
 
-import ArrivalBanner from "@components/MainPage/ArrivalBanner";
-import TopBanner from "@components/MainPage/TopBanner";
-/** @TODO */
-// import HotelInfo from "@components/MainPage/HotelInfo";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import TopBanner from "@components/MainPage/TopBanner";
+
+// main-info section
+import ArrivalBanner from "@components/MainPage/ArrivalBanner";
+import HotelInfo from "@components/MainPage/HotelInfo";
+
+// service-info section
+import MovieBanner from "@components/MainPage/MovieBanner";
+import TourBanner from "@components/MainPage/TourBanner";
+
+// cs-info section
+import ReservataionInfo from "@components/MainPage/ReservationInfo";
+import AdditionalInfo from "@components/MainPage/AdditionalInfo";
+
 const NewMainPage: React.FC = () => {
   return (
     <>
-      <section key="intro" className="gap-y-4">
+      <section key="intro">
         <TopBanner />
-        <ArrivalBanner />
       </section>
-      {/*<section key="hotel-info">
+
+      <section key="main-info">
+        <ArrivalBanner />
         <HotelInfo />
-      </section> */}
-      <div className="container bg-blue-300 w-full">안녕하세요?</div>
-      <div className="container bg-red-300 w-full">원페이지스크롤 입니다.</div>
-      <div className="container bg-green-300 w-full">어때요</div>
-      <div className="container bg-pink-300 w-full">괜찮나요?</div>
+      </section>
+
+      {/* 영화 & 체험 안내 */}
+      <section key="service-info">
+        <MovieBanner />
+        <TourBanner />
+      </section>
+
+      {/* 개인 & 단체 예약 + Notice & Information */}
+      <section key="cs-info">
+        <ReservataionInfo />
+        <AdditionalInfo />
+      </section>
     </>
   );
 };

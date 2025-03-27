@@ -13,46 +13,16 @@ const noticeTypesData: Record<NoticeType, string> = {
 
 const noticeData: NoticeProps[] = [
   {
-    uid: 3822,
-    type: "goesan",
-    title: "괴산자연드림파크 호텔+디너 패키지 출시안내 (2,3,4월 운영계획표)",
-    date: new Date("2025-02-10"),
-  },
-  {
-    uid: 3810,
-    type: "goesan",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-21"),
-  },
-  {
-    uid: 3809,
+    uid: 3857,
     type: "gurye",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-21"),
+    title: "구례자연드림파크 숙박 오픈일정 변경 안내",
+    date: new Date("2025-03-18 15:47:55"),
   },
   {
-    uid: 3806,
+    uid: 3839,
     type: "goesan",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-14"),
-  },
-  {
-    uid: 3805,
-    type: "gurye",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-14"),
-  },
-  {
-    uid: 3802,
-    type: "goesan",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-09"),
-  },
-  {
-    uid: 3801,
-    type: "gurye",
-    title: "전산 시스템 점검으로 인한 웹사이트 이용안내",
-    date: new Date("2025-01-09"),
+    title: "자연드림파크 회원가입 및 로그인 방식이 변경되어 안내드립니다.",
+    date: new Date("2025-02-21 17:32:27"),
   },
 ];
 

@@ -6,7 +6,7 @@ import authRoutes from "@routes/authRoutes";
 import NewMainPage from "@pages/NewMainPage";
 
 const Page = lazy(() => import("@pages/Page"));
-const OnePageScroll = lazy(() => import("@pages/OnePageScroll"));
+const OnePage = lazy(() => import("@pages/OnePage"));
 
 const NotFound = lazy(() => import("@pages/NotFound"));
 const LoadingPage = lazy(() => import("@pages/LoadingPage"));
@@ -20,7 +20,7 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <Suspense fallback={<LoadingPage />}>
-        <OnePageScroll />
+        <OnePage />
       </Suspense>
     ),
     children: [
