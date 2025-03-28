@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
 import { media } from "@utils/media";
-import { getTopBanners } from "@api/new-mainpage";
+import { getTopBanners } from "@api/mainpage";
 
 import Image from "@components/Image";
 

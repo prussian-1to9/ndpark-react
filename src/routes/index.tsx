@@ -3,13 +3,14 @@ import { createBrowserRouter } from "react-router-dom";
 // import { NavermapsProvider } from "react-naver-maps";
 import commonRoutes from "@routes/commonRoutes";
 import authRoutes from "@routes/authRoutes";
-import NewMainPage from "@pages/NewMainPage";
 
 const Page = lazy(() => import("@pages/Page"));
 const OnePage = lazy(() => import("@pages/OnePage"));
 
 const NotFound = lazy(() => import("@pages/NotFound"));
 const LoadingPage = lazy(() => import("@pages/LoadingPage"));
+
+const MainPage = lazy(() => import("@pages/MainPage"));
 
 const router = createBrowserRouter([
   // exclude header & footer : 세션 & 계정 관련
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <NewMainPage />,
+        element: <MainPage />,
       },
     ],
   },

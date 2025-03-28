@@ -1,6 +1,6 @@
 import React from "react";
 
-import { getArrivalBanners } from "@api/new-mainpage";
+import { getArrivalBanners } from "@api/mainpage";
 
 import Container from "@components/Container";
 

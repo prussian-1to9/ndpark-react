@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { getHotelInfo } from "@api/new-mainpage";
+import { getHotelInfo } from "@api/mainpage";
 
 import Container from "@components/Container";
 import Image from "@components/Image";

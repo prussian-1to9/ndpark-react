@@ -8,16 +8,8 @@ const PlannedPage = styled.div`
   line-height: 2rem;
 `;
 
-const MainPage = lazy(() => import("@pages/MainPage"));
-const NewMainPage = lazy(() => import("@pages/NewMainPage"));
-
+/** @FIXME : 개발예정 페이지 */
 const commonRoutes = [
-  {
-    index: true,
-    // element: <MainPage />,
-    element: <NewMainPage />,
-  },
-  /** @FIXME : 개발예정 페이지 */
   {
     path: "mypage",
     element: <PlannedPage>마이페이지(개발예정)</PlannedPage>,

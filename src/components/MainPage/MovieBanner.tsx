@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
-import { getMovieInfo, getMovieBanners } from "@api/new-mainpage";
+import { getMovieInfo, getMovieBanners } from "@api/mainpage";
 import { numberWithCommas } from "@utils/stringHandling";
 
 import Container from "@components/Container";

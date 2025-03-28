@@ -14,27 +14,64 @@ body {
 }
 
 /* reset */
-p, h1, h2, h3, h4, h5, h6 { margin: 0; }
-img { border: 0; }
-a { text-decoration: none; color: inherit; }
-address { font-style: normal; }
-textarea { border: 0; outline: none; }
-button, input, select, textarea { font-family: inherit; font-size: inherit; line-height: inherit; }
-button, input { background: none; border: 0; outline: none; }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+img {
+  border: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+address {
+  font-style: normal;
+}
+textarea {
+  border: 0;
+  outline: none;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+button,
+input {
+  background: none;
+  border: 0;
+  outline: none;
+}
 button {
   font-weight: 500;
   outline: none;
-  border: 0; background: none;
+  border: 0;
+  background: none;
   cursor: pointer;
 }
-ul, ol, li {
+ul,
+ol,
+li {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-body, th, td,
-input, select, textarea,
+body,
+th,
+td,
+input,
+select,
+textarea,
 button {
   font-size: 1rem;
   line-height: 1.6;
@@ -75,13 +112,13 @@ div#wrap {
   --color-n-05: #161616;
   --color-n-10: #252525;
   --color-n-20: #333333;
-  /* --color-n-30: #3C3C3C; */
-  /* --color-n-40: #535353; */
+  --color-n-30: #444444;
+  --color-n-40: #555555;
   --color-n-50: #666666;
-  /* --color-n-60: #999999; */
+  --color-n-60: #999999;
   --color-n-70: #cccccc;
   --color-n-80: #dddddd;
   --color-n-90: #e6e6e6;
   --color-n-95: #f3f3f3;
-  /* --color-n-99: #fafafa; */
+  --color-n-99: #fafafa;
 }
