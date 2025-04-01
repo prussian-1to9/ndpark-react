@@ -8,6 +8,8 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
+import { glowPlaceholderBasicConfig } from "@styles/animation";
+
 import Image from "@components/Image";
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -29,11 +31,12 @@ const ImageWrapper = styled.div`
   margin-bottom: 0.5rem;
   overflow: hidden;
 
+  ${glowPlaceholderBasicConfig}
+
   & img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    background-color: var(--color-n-60);
   }
 `;
 

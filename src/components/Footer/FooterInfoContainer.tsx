@@ -1,20 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
+import { logoImageNDParkFooter } from "@assets/image";
+import { media } from "@utils/media";
+
 import Image from "@components/Image";
 import Container from "@components/Container";
 
-import { media } from "@utils/media";
-
-import { logoImageNDParkFooter } from "@assets/image";
-
 const StyledContainer = styled(Container)`
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
   padding-bottom: 4rem;
-  gap: 1rem;
 
   ${media.tablet`
     flex-direction: column;
@@ -37,7 +31,7 @@ const FooterInfoSection: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   return (
-    <StyledContainer>
+    <StyledContainer className="relative flex justify-between gap-4 mx-auto my-0">
       <Image image={logoImageNDParkFooter} />
       {children}
     </StyledContainer>

@@ -1,11 +1,11 @@
 import React from "react";
 
+import { getTourBanners } from "@api/mainpage";
+
 import Container from "@components/Container";
 
 import MainPageHeading from "@components/MainPage/MainPageHeading";
 import MainPageBanner from "@components/MainPage/MainPageBanner";
-
-import { getTourBanners } from "@api/mainpage";
 
 const TourBanner: React.FC = () => {
   return (

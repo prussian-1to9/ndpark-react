@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
-import { media } from "@utils/media";
 import { getTopBanners } from "@api/mainpage";
+import { media } from "@utils/media";
 
 import Image from "@components/Image";
 

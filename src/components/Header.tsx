@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
+import { useViewPort } from "@utils/Viewport";
+
 import NavMenu from "@components/NavMenu";
 import Container from "@components/Container";
 
@@ -9,10 +12,6 @@ import HeaderMenu from "@components/Header/HeaderMenu";
 import HeaderLinkSection from "@components/Header/HeaderLinkSection";
 import HeaderMenuSection from "@components/Header/HeaderMenuSection";
 import HeaderDetailMenuSection from "@components/Header/HeaderDetailMenuSection";
-
-import { useViewPort } from "@utils/Viewport";
-
-import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
 
 const StyledHeader = styled.header`
   position: fixed;

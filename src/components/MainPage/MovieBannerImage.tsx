@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
+import { glowPlaceholderBasicConfig } from "@styles/animation";
+
 import Image from "@components/Image";
 
 const ImageWrapper = styled.div`
@@ -23,6 +25,7 @@ const ImageWrapper = styled.div`
     height: 100%;
     object-fit: cover;
   }
+  ${glowPlaceholderBasicConfig}
 `;
 
 const MovieBannerImage: React.FC<{ image: ImageProps }> = ({ image }) => {

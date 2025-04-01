@@ -1,8 +1,9 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import App from "./App";
 
 import reportWebVitals from "@utils/reportWebVitals";
+
+import App from "./App";
 
 // render component (react version: 18.3.1)
 const root = document.getElementById("wrap") || document.createElement("div");
@@ -17,4 +18,4 @@ createRoot(root).render(
   </React.StrictMode>
 );
 
-reportWebVitals(console.log);
+if (process.env.NODE_ENV === "development") reportWebVitals(console.log);

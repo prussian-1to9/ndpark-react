@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Hourglass } from "react-loader-spinner";
 
-import Image from "@components/Image";
-
 import { logoImageNDPark } from "@assets/image";
+
+import Image from "@components/Image";
 
 const LoadingPage: React.FC = () => {
   return (

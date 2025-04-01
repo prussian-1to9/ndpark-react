@@ -1,10 +1,10 @@
-.swiper-slide img {
+#wrap .swiper-slide img {
   width: 100%;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
+#wrap .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: var(--color-n-80);
 }
-.swiper-button-prev,
-.swiper-button-next {
+#wrap .swiper-button-prev,
+#wrap .swiper-button-next {
   color: var(--color-n-80);
 }
