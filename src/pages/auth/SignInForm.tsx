@@ -5,20 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { Checkbox, Form } from "antd";
 import { Rule } from "antd/es/form";
 
+import { media } from "@utils/media";
+
 import AuthForm from "@components/AuthPage/AuthForm";
 import AuthInput from "@components/AuthPage/AuthInput";
 import AuthButton from "@components/AuthPage/AuthButton";
 
-import { media } from "@utils/media";
-
 const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-
-  ${media.mobile`
-    flex-direction: column;
-    `}
+  ${media.mobile` flex-direction: column;  `}
 `;
 
 // set rule
@@ -97,7 +91,7 @@ const SignInForm: React.FC = () => {
         id: storedID ?? "",
       }}
     >
-      <StyledDiv>
+      <StyledDiv className="flex justify-center gap-2">
         <AuthButton
           onClick={handleMethodButtonClick}
           data-type="phone"

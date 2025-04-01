@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { Link, Outlet, Navigate } from "react-router-dom";
 import { ConfigProvider } from "antd";
 
+import { logoImageNDPark } from "@assets/image";
+
 import Image from "@components/Image";
 import Container from "@components/Container";
 
 import AuthFooter from "@components/AuthPage/AuthFooter";
-
-import { logoImageNDPark } from "@assets/image";
 
 const StyledContainer = styled(Container)`
   height: 100vh;

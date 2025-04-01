@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { getNavMenuLinks } from "@api/index";
+import { media } from "@utils/media";
+import { useViewPort } from "@utils/Viewport";
+
 import NavMenuHeader from "@components/NavMenu/NavMenuHeader";
 import NavMenuFooter from "@components/NavMenu/NavMenuFooter";
 import NavMenuUl from "@components/NavMenu/NavMenuUl";
 import NavMenuButton from "@components/NavMenu/NavMenuButton";
-
-import { media } from "@utils/media";
-import { useViewPort } from "@utils/Viewport";
-
-import { getNavMenuLinks } from "@api/index";
 
 // z-index : PC < Header < M
 const StyledAside = styled.aside`

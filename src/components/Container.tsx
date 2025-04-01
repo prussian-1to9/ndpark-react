@@ -8,12 +8,8 @@ const StyledDiv = styled.div`
   margin: 0 auto;
   padding: 0 2rem;
 
-  ${media.mobile`
-    padding: 0 1rem;
-  `}
-  ${media.tablet`
-    padding: 0 1.5rem;
-  `}
+  ${media.mobile` padding: 0 1rem; `}
+  ${media.tablet` padding: 0 1.5rem; `}
 `;
 
 export default StyledDiv;

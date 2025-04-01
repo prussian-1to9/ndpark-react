@@ -29,9 +29,11 @@ const StyledUl = styled.ul`
   }
 `;
 
-const Footer: React.FC = () => {
+const Footer: React.FC<{ display?: "none" | "block" }> = ({
+  display = "block",
+}) => {
   return (
-    <StyledFooter>
+    <StyledFooter style={{ display: display }}>
       <FooterLinkContainer>
         <StyledUl>
           {getFooterUserLinks().map((info) => (

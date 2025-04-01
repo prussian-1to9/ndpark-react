@@ -1,6 +1,10 @@
-.swiper-slide img {
+#wrap .swiper-slide img {
   width: 100%;
 }
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background: var(--color-p-40);
+#wrap .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--color-n-80);
+}
+#wrap .swiper-button-prev,
+#wrap .swiper-button-next {
+  color: var(--color-n-80);
 }

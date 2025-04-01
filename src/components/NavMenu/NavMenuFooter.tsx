@@ -16,9 +16,8 @@ const StyledDiv = styled.div`
     width: 100%;
     padding: 0.5rem;
 
-    border-top: 1px solid var(--color-n-90);
-    background-color: var(--color-n-95);
-    color: var(--color-n-20);
+    background-color: var(--color-n-90);
+    color: var(--color-n-40);
   }
 `;
 

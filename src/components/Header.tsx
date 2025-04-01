@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
+import { useViewPort } from "@utils/Viewport";
+
 import NavMenu from "@components/NavMenu";
 import Container from "@components/Container";
 
@@ -9,10 +12,6 @@ import HeaderMenu from "@components/Header/HeaderMenu";
 import HeaderLinkSection from "@components/Header/HeaderLinkSection";
 import HeaderMenuSection from "@components/Header/HeaderMenuSection";
 import HeaderDetailMenuSection from "@components/Header/HeaderDetailMenuSection";
-
-import { useViewPort } from "@utils/Viewport";
-
-import { getHeaderMenuLinks, getHeaderDetailMenuLinks } from "@api/index";
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -41,7 +40,9 @@ const HeaderGridContainer = styled(Container)`
   }
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<{ display?: "none" | "block" }> = ({
+  display = "block",
+}) => {
   const { isMobile } = useViewPort();
   const isSignedIn: boolean =
     localStorage.getItem(process.env.SIGNIN_CHECK_KEY || "") !== null;
@@ -62,7 +63,7 @@ const Header: React.FC = () => {
         {showNavMenu && (
           <NavMenu isSignedIn={isSignedIn} setShowNavMenu={setShowNavMenu} />
         )}
-        <StyledHeader>
+        <StyledHeader style={{ display: display }}>
           <HeaderMenuSection
             isMobile={isMobile}
             setshowNavMenu={setShowNavMenu}
@@ -74,7 +75,7 @@ const Header: React.FC = () => {
   return (
     <>
       <NavMenu />
-      <StyledHeader>
+      <StyledHeader style={{ display: display }}>
         <HeaderLinkSection isSignedIn={isSignedIn} />
         <HeaderMenuSection isMobile={isMobile}>
           <HeaderGridContainer>

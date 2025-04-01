@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const StyledSelect = styled.select`
-  width: fit-content;
-  height: fit-content;
-  padding: 0.5rem;
-
   border: 1px solid var(--color-n-50);
   color: var(--color-n-50);
   background: transparent;
@@ -28,7 +24,11 @@ const FooterFamilySiteSelect: React.FC<{ children: React.ReactNode }> = ({
   }, [familySiteLink]);
 
   return (
-    <StyledSelect onChange={handleFamilySiteLinkChange} value={familySiteLink}>
+    <StyledSelect
+      className="p-2"
+      onChange={handleFamilySiteLinkChange}
+      value={familySiteLink}
+    >
       {children}
     </StyledSelect>
   );

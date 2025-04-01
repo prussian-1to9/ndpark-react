@@ -1,19 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-import { media } from "@utils/media";
 import { CorporateInfo } from "@api/footerData";
+import { media } from "@utils/media";
 
 const StyledAddress = styled.address`
   & p,
   & b {
     color: var(--color-n-50);
-    margin: 0;
-    padding: 0;
     font-size: 0.9rem;
-    ${media.mobile`
-      font-size: 0.7rem;
-    `}
+    ${media.mobile` font-size: 0.7rem; `}
   }
 `;
 
