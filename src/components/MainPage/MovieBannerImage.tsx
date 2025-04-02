@@ -7,6 +7,7 @@ import Image from "@components/Image";
 
 const ImageWrapper = styled.div`
   width: 100%;
+  max-width: 40vw;
   position: relative;
   overflow: hidden;
   margin-bottom: 0.5rem;

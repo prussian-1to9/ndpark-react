@@ -22,15 +22,6 @@ const imageStyles = css`
   }
 `;
 
-const textStyles = css`
-  & ul,
-  & h3 {
-    position: relative;
-    z-index: 1;
-  }
-  color: var(--color-n-30);
-`;
-
 const hoverStyles = css`
   &:hover ul,
   &:hover h3 {
@@ -57,6 +48,7 @@ const HotelInfoContext = styled.div`
   height: 10rem;
   padding: 0 2rem;
 
+  color: var(--color-n-30);
   transition: color 0.5s;
   z-index: 0;
 
@@ -65,9 +57,12 @@ const HotelInfoContext = styled.div`
     padding: 1rem;
     min-height: 5rem;
   `}
+  ${media.mobile`
+    padding: 0.5rem;
+    min-height: unset;
+  `}
 
   ${imageStyles}
-  ${textStyles}
   ${hoverStyles}
 `;
 

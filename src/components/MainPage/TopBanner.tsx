@@ -80,6 +80,11 @@ const BannerText = styled.div`
   }
   & p {
     white-space: pre-line;
+    ${media.tablet`
+      width: 75%;
+      word-break: keep-all;
+      font-size: 0.8rem;
+    `};
   }
 `;
 
@@ -96,7 +101,9 @@ const TopBanner: React.FC = () => {
         <SwiperSlide key={`top-${index}`}>
           <Image image={banner.image} />
           <BannerText>
-            <h3 className="text-3xl font-semibold">{banner.title}</h3>
+            <h3 className="text-2xl lg:text-3xl font-semibold">
+              {banner.title}
+            </h3>
             <p>{banner.desc}</p>
           </BannerText>
         </SwiperSlide>

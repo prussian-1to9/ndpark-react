@@ -8,6 +8,9 @@ import { Scrollbar } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/scrollbar";
 
+import type { BannerProps } from "@api/mainpage/bannerData";
+import { media } from "@utils/media";
+import { text, lineClamp } from "@styles/text";
 import { glowPlaceholderBasicConfig } from "@styles/animation";
 
 import Image from "@components/Image";
@@ -15,13 +18,29 @@ import Image from "@components/Image";
 const StyledSwiperSlide = styled(SwiperSlide)`
   width: 25%;
   max-width: 60rem;
-  & h4 {
-    font-weight: 400;
-    color: var(--color-n-20);
-  }
-  & p {
-    color: var(--color-n-50);
-  }
+  min-height: 10rem;
+`;
+
+const StyledH4 = styled.h4`
+  color: var(--color-n-20);
+  ${text("normal")}
+  ${text("2xl")}
+
+  ${media.tablet`
+    ${text("2xl")}
+    ${lineClamp(2)}
+  `}
+  ${media.mobile`
+    ${text("xl")}
+  `}
+`;
+const StyledP = styled.p`
+  color: var(--color-n-50);
+
+  ${media.tablet`
+    ${text("sm")}
+    ${lineClamp(2)}
+  `}
 `;
 
 const ImageWrapper = styled.div`
@@ -40,7 +59,6 @@ const ImageWrapper = styled.div`
   }
 `;
 
-import type { BannerProps } from "@api/mainpage/bannerData";
 const MainPageBanner: React.FC<{ banners: BannerProps[] }> = ({ banners }) => {
   return (
     <Swiper
@@ -57,12 +75,8 @@ const MainPageBanner: React.FC<{ banners: BannerProps[] }> = ({ banners }) => {
             <ImageWrapper>
               <Image image={banner.image} />
             </ImageWrapper>
-            <h4 className="text-xl line-clamp-2 lg:text-2xl lg:line-clamp-none">
-              {banner.title}
-            </h4>
-            <p className="text-base line-clamp-2 lg:text-lg lg:line-clamp-none">
-              {banner.desc}
-            </p>
+            <StyledH4>{banner.title}</StyledH4>
+            <StyledP>{banner.desc}</StyledP>
           </Link>
         </StyledSwiperSlide>
       ))}

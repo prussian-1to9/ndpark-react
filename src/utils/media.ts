@@ -1,9 +1,9 @@
 import { css, CSSObject, Interpolation } from "styled-components";
 type DeviceType = "mobile" | "tablet" | "desktop";
 const sizes: Record<DeviceType, number> = {
-  mobile: 600,
-  tablet: 905,
-  desktop: 1240,
+  mobile: 640,
+  tablet: 768,
+  desktop: 1024,
 };
 
 const media = Object.entries(sizes).reduce((acc, [key, value]) => {

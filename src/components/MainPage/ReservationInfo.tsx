@@ -43,6 +43,7 @@ const ContactWrapper = styled.div`
     width: 4rem;
     border-bottom: 1px solid white;
   }
+  ${media.tablet` font-size: 0.875rem; `}
 `;
 
 const ReservataionInfo: React.FC = () => {

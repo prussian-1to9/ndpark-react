@@ -53,11 +53,13 @@ const AdditionalContext: React.FC<AdditionalContextProps> = ({
   return (
     <StyledDiv className="flex flex-col gap-4">
       <Link to={to ?? "javascript:;"}>
-        <StyledP className={"text-base " + headingType}>{heading}</StyledP>
-        <h5 className="text-xl">{title}</h5>
+        <StyledP className={"text-sm lg:text-base " + headingType}>
+          {heading}
+        </StyledP>
+        <h5 className="text-base md:text-lg lg:text-xl">{title}</h5>
         {children}
         {date && (
-          <span className="text-sm text-neutral-400">
+          <span className="text-xs lg:text-sm text-neutral-400">
             {date.toLocaleDateString()}
           </span>
         )}
