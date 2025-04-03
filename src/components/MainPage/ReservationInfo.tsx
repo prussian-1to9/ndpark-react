@@ -10,27 +10,30 @@ import MainPageHeading from "@components/MainPage/MainPageHeading";
 
 const StyledDiv = styled.div`
   width: 100vw;
-  min-height: 14rem;
+  min-height: 12rem;
   height: 50%;
   background: url("https://www.naturaldreampark.co.kr/images/main_banner_group.jpg")
     no-repeat center center;
   background-size: cover;
 
-  ${media.tablet` height: 30%; `}
+  ${media.tablet`
+    height: 30%;
+    min-height: 12rem;
+  `}
   ${media.mobile` height: 20%; `}
 `;
 
 const StyledContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
   color: white;
-  margin: 4rem auto 8rem;
-
-  ${media.tablet` margin: 2rem auto; `}
-  ${media.mobile` margin: 1rem auto; `}
 `;
 
 const ContactWrapper = styled.div`
   position: relative;
-  margin-top: 2rem;
   padding: 1rem 0;
   display: flex;
   flex-direction: column;
@@ -50,11 +53,9 @@ const ReservataionInfo: React.FC = () => {
   return (
     <StyledDiv>
       <StyledContainer>
-        <h3 className="text-lg lg:text-xl font-medium mb-4">
-          개인 & 단체 예약
-        </h3>
+        <h3 className="text-lg lg:text-xl font-medium">개인 & 단체 예약</h3>
         <Link to="tel:18335753">
-          <MainPageHeading className="mt-4 mb-8">1833-5753</MainPageHeading>
+          <MainPageHeading className="lg:mb-4">1833-5753</MainPageHeading>
         </Link>
         <ContactWrapper>
           <p>1번 &gt; 괴산자연드림파크</p>

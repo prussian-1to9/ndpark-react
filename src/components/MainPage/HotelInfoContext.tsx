@@ -45,7 +45,7 @@ const HotelInfoContext = styled.div`
   gap: 1rem;
 
   width: 100%;
-  height: 10rem;
+  max-height: 10rem;
   padding: 0 2rem;
 
   color: var(--color-n-30);
@@ -59,7 +59,7 @@ const HotelInfoContext = styled.div`
   `}
   ${media.mobile`
     padding: 0.5rem;
-    min-height: unset;
+    min-height: 4rem;
   `}
 
   ${imageStyles}

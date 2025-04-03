@@ -13,14 +13,22 @@ import Container from "@components/Container";
 import MainPageHeading from "@components/MainPage/MainPageHeading";
 import MovieBannerImage from "@components/MainPage/MovieBannerImage";
 
-const StyledContainer = styled(Container)`
-  margin: 2rem auto;
-  ${media.mobile`margin: 1rem auto; `};
-`;
 const Wrapper = styled.div`
+  position: relative;
   width: 100%;
   background-color: var(--color-n-05);
   color: white;
+  ${media.mobile` height: 100vh; `}
+`;
+const StyledContainer = styled(Container)`
+  margin: 2rem auto;
+
+  ${media.tablet`
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  `}
+  ${media.mobile` margin: 1rem auto; `}
 `;
 
 const InfoWrapper = styled.div`
@@ -71,7 +79,7 @@ const MovieBanner: React.FC = () => {
             breakpoints={{
               0: { slidesPerView: 1 },
               300: { slidesPerView: 2 },
-              600: { slidesPerView: 3 },
+              768: { slidesPerView: 3 },
               1024: { slidesPerView: 5 },
             }}
           >

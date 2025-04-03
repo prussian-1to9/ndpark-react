@@ -4,6 +4,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import { useViewPort } from "@utils/Viewport";
+
 import TopBanner from "@components/MainPage/TopBanner";
 
 // main-info section
@@ -19,23 +21,42 @@ import ReservataionInfo from "@components/MainPage/ReservationInfo";
 import AdditionalInfo from "@components/MainPage/AdditionalInfo";
 
 const MainPage: React.FC = () => {
+  const { isMobile } = useViewPort();
+
   return (
     <>
       <section key="intro">
         <TopBanner />
       </section>
 
-      {/* New Arrival & 자연드림파크만의 숙소 */}
-      <section key="main-info">
-        <ArrivalBanner />
-        <HotelInfo />
-      </section>
-
-      {/* 영화 & 체험 안내 */}
-      <section key="service-info">
-        <MovieBanner />
-        <TourBanner />
-      </section>
+      {isMobile ? (
+        <>
+          <section key="promotion">
+            <ArrivalBanner />
+            <TourBanner />
+          </section>
+          <section key="hotel-info">
+            <HotelInfo />
+          </section>
+          {/* 영화 & 체험 안내 */}
+          <section key="movie-info">
+            <MovieBanner />
+          </section>
+        </>
+      ) : (
+        <>
+          {/* New Arrival & 자연드림파크만의 숙소 */}
+          <section key="main-info">
+            <ArrivalBanner />
+            <HotelInfo />
+          </section>
+          {/* 영화 & 체험 안내 */}
+          <section key="service-info">
+            <MovieBanner />
+            <TourBanner />
+          </section>
+        </>
+      )}
 
       {/* 개인 & 단체 예약 + Notice & Information */}
       <section key="cs-info">

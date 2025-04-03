@@ -44,17 +44,21 @@ const StyledP = styled.p`
 `;
 
 const ImageWrapper = styled.div`
+  position: relative;
   width: 100%;
   height: 16vw;
-  max-height: 14.8rem;
+  max-height: 20vh;
   margin-bottom: 0.5rem;
   overflow: hidden;
 
   ${glowPlaceholderBasicConfig}
 
   & img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
   }
 `;

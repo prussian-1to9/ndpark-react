@@ -15,12 +15,12 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   height: 30%;
+  margin-top: 1rem;
 
   ${media.tablet`
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
-    padding-top: 1rem;
     gap: 1rem;
   `}
 `;
