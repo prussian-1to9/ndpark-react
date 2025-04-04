@@ -20,7 +20,7 @@ const useViewPort = (): viewPort => {
   const handleResize = () => {
     setWidth(window.innerWidth);
     setHeight(window.innerHeight);
-    setIsMobile(window.innerWidth < 905);
+    setIsMobile(window.innerWidth < 1024);
   };
 
   useLayoutEffect(() => {

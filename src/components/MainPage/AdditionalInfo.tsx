@@ -15,12 +15,12 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   height: 30%;
+  margin-top: 1rem;
 
   ${media.tablet`
     flex-wrap: wrap;
     justify-content: center;
     height: auto;
-    padding-top: 1rem;
     gap: 1rem;
   `}
 `;
@@ -50,11 +50,13 @@ const AdditionalInfo: React.FC = () => {
   return (
     <StyledContainer>
       <NoticeWrapper>
-        <MainPageHeading className="text-left mb-8">Notice</MainPageHeading>
+        <MainPageHeading className="text-left mb-4 lg:mb-8">
+          Notice
+        </MainPageHeading>
         <NoticeContent />
       </NoticeWrapper>
       <FAQWrapper>
-        <MainPageHeading className="text-left mb-8">
+        <MainPageHeading className="text-left mb-4 lg:mb-8">
           Information
         </MainPageHeading>
         <AdditionalContext
@@ -62,7 +64,7 @@ const AdditionalInfo: React.FC = () => {
           title="반드시 예약을 해야 하나요? 당일 현장에서 진행하면 안되나요?"
           to="https://www.naturaldreampark.co.kr/faq.html?park_gubun=goesan"
         >
-          <div className="justify-items-end">
+          <div className="flex justify-end">
             <Image image={{ ...linkArrow, width: 60 }} />
           </div>
         </AdditionalContext>

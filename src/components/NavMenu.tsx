@@ -82,6 +82,14 @@ const NavMenu: React.FC<{
       window.addEventListener("scroll", () => {
         setShowNavMenu && setShowNavMenu(false);
       });
+
+      window.addEventListener("touchmove", (e) => {
+        const target = e.target as HTMLElement | null;
+        if (target?.closest("aside")) return;
+
+        if (e.touches[0].clientY < 100) setShowNavMenu && setShowNavMenu(true);
+        else setShowNavMenu && setShowNavMenu(false);
+      });
     } else window.addEventListener("scroll", handleScrollInPC);
   }, [isMobile]);
 

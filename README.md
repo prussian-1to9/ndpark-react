@@ -21,12 +21,12 @@
 
 ### View 개선
 
-- 표준 가로 규격 변경 ([google Material Design guide](https://m3.material.io/)를 참고하였습니다.)
-  | Agent | px |
-  |:-:|:-:|
-  | PC | `1024` |
-  | Tablet | `905` |
-  | Phone | `600` |
+- 표준 가로 규격 breakpoint 변경 (tailwind CSS에 맞게 변경)
+  | Agent | px | tailwind CSS |
+  |:-:|:-:|:-:|
+  | PC | `1024` | `lg:` |
+  | Tablet | `768` | `md:` |
+  | Phone | `640` | `sm:` |
 
 - `px` 단위의 규격을 가능한 `%`, `rem`, `vw`, `vh` 단위로 변경
 

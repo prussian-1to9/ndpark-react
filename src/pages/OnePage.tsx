@@ -52,7 +52,7 @@ const OnePageScroll: React.FC = () => {
     if (pageRef.current < 0) {
       pageRef.current = 0;
       setShowHeader(true);
-    } else if (pageRef.current >= lastPage) {
+    } else if (pageRef.current > lastPage) {
       pageRef.current = lastPage;
       setShowFooter(true);
     }
