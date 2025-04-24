@@ -8,7 +8,7 @@ const path = require("path");
 module.exports = (env) => {
   const mode = env.NODE_ENV ?? "development";
   const envFile = mode === "development" ? ".env.dev" : ".env";
-  const devTool = mode === "development" ? "inline-source-map" : "source-map";
+  const devTool = mode === "development" ? "inline-source-map" : false;
 
   return {
     mode: mode,

@@ -1,19 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const StyledDiv = styled.div`
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 100%;
   height: 3.75rem;
-
-  text-align: center;
-  font-size: 0.7rem;
   font-weight: 600;
-
-  justify-content: center;
   border-bottom: 2px solid transparent;
   transition: border-bottom 0.3s;
 
@@ -27,17 +20,17 @@ const StyledDiv = styled.div`
 `;
 
 const HeaderMenu: React.FC<{
-  link: LinkProps;
+  menu: MenuProps;
   hoveredMenu: string;
   hoverFunc: (key: string) => void;
-}> = ({ link, hoveredMenu, hoverFunc }) => {
+}> = ({ menu, hoveredMenu, hoverFunc }) => {
   return (
     <StyledDiv
-      className={hoveredMenu === link.key ? "active" : ""}
-      onMouseEnter={() => hoverFunc(link.key)}
+      className={hoveredMenu === menu.key ? "active" : ""}
+      onMouseEnter={() => hoverFunc(menu.key)}
       onMouseLeave={() => hoverFunc("")}
     >
-      <Link to={link.to ?? ""}>{link.alt}</Link>
+      <Link to={menu.to ?? ""}>{menu.title}</Link>
     </StyledDiv>
   );
 };

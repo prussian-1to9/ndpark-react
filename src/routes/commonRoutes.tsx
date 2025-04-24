@@ -1,27 +1,37 @@
 import React, { lazy } from "react";
-import styled from "styled-components";
+import ExternalRedirect from "@routes/ExternalRedirect";
 
-const PlannedPage = styled.div`
-  text-align: center;
-  height: 24rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-`;
+import goesanRoutes from "@routes/common/goesanRoutes";
+import guryeRoutes from "@routes/common/guryeRoutes";
+import kanazawaRoutes from "@routes/common/kanazawaRoutes";
+import complexRoutes from "@routes/common/complexRoutes";
+import eventRoutes from "@routes/common/eventRoutes";
 
-/** @FIXME : 개발예정 페이지 */
 const commonRoutes = [
+  /** @FIXME : 개발예정 페이지 */
   {
     path: "mypage",
-    element: <PlannedPage>마이페이지(개발예정)</PlannedPage>,
+    element: (
+      <ExternalRedirect to="https://www.naturaldreampark.co.kr/cancel_new.html" />
+    ),
   },
   {
     path: "cscenter",
-    element: <PlannedPage>고객센터(개발예정)</PlannedPage>,
+    element: (
+      <ExternalRedirect to="https://www.naturaldreampark.co.kr/board/community.html" />
+    ),
   },
   {
     path: "wishlist",
-    element: <PlannedPage>장바구니(개발예정)</PlannedPage>,
+    element: (
+      <ExternalRedirect to="https://www.naturaldreampark.co.kr/wishlist.php?type=B" />
+    ),
   },
+  goesanRoutes,
+  guryeRoutes,
+  kanazawaRoutes,
+  complexRoutes,
+  eventRoutes,
 ];
 
 export default commonRoutes;
